@@ -27,7 +27,7 @@ btnRandom.addEventListener("click",randomContent);
 
 
  async function generateRandom() {
- let response = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`);
+ let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`);
  const data = await response.json();
  contentRandom.innerHTML = `<img src="${data.data.images.original.url}" class="mb-3 ms-1 img-thumnail" alt="${data.title}"  width="400" height="400">`;
 
@@ -38,7 +38,7 @@ inputSearch.onkeyup = async (event) => {
   //console.log(event);
   if (event.keyCode !== 13) return;
   gifs.innerHTML = "";
-  const response = await fetch(`http://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${inputSearch.value}`); //aqui va el endpoint o url
+  const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${inputSearch.value}`); //aqui va el endpoint o url
   const data = await response.json();
   console.log(data);
   //for (let i = 0; i < data.data.length; i++) {
